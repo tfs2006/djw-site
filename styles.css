@@ -193,14 +193,16 @@ main {
 }
 .section-links,
 .section-about,
-.section-contact {
+.section-contact,
+.section-video {
   padding: 3rem 2rem;
   max-width: 1000px;
   margin: 0 auto;
 }
 .section-links h2,
 .section-about h2,
-.section-contact h2 {
+.section-contact h2,
+.section-video h2 {
   text-align: center;
   margin-bottom: 2rem;
   background: linear-gradient(135deg, #fff 0%, #c4abff 100%);
@@ -212,7 +214,8 @@ main {
 }
 .section-links h2::after,
 .section-about h2::after,
-.section-contact h2::after {
+.section-contact h2::after,
+.section-video h2::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -287,6 +290,24 @@ main {
   color: #bbb;
   font-size: 1rem;
   margin: 0;
+}
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: linear-gradient(135deg, rgba(35, 35, 39, 0.9) 0%, rgba(26, 26, 46, 0.8) 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(166, 131, 247, 0.2);
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
 }
 .section-about p {
   font-size: 1.1rem;
@@ -556,12 +577,16 @@ main section {
   animation-delay: 0.1s;
 }
 
-.section-about {
+.section-video {
   animation-delay: 0.2s;
 }
 
-.section-contact {
+.section-about {
   animation-delay: 0.3s;
+}
+
+.section-contact {
+  animation-delay: 0.4s;
 }
 
 /* Improved accessibility - Focus styles */
