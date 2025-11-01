@@ -128,12 +128,14 @@ h3 {
   max-width: 600px;
 }
 .cta-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
   background: linear-gradient(135deg, #a683f7 0%, #8b5cf6 100%);
   border: none;
   border-radius: 12px;
-  padding: 1em 2.3em;
+  padding: 0.65em 2.3em;
   font-size: 1.1rem;
   font-weight: 700;
   text-decoration: none;
@@ -142,7 +144,7 @@ h3 {
   transition: all 0.3s ease;
   min-height: 44px;
   min-width: 44px;
-  line-height: 1.5;
+  line-height: 1;
   position: relative;
   overflow: hidden;
 }
@@ -314,12 +316,14 @@ main {
   text-shadow: 0 0 10px rgba(166, 131, 247, 0.5);
 }
 .email-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
   background: linear-gradient(135deg, #a683f7 0%, #8b5cf6 100%);
   border: none;
   border-radius: 12px;
-  padding: 0.8em 2em;
+  padding: 0.65em 2em;
   font-size: 1.1rem;
   font-weight: 700;
   text-decoration: none;
@@ -328,7 +332,7 @@ main {
   transition: all 0.3s ease;
   min-height: 44px;
   min-width: 44px;
-  line-height: 1.5;
+  line-height: 1;
   position: relative;
   overflow: hidden;
 }
