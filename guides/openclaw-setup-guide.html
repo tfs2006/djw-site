@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z44B6SEPWT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Z44B6SEPWT');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenClaw Setup Guide: Best Settings for Complete Beginners (2026)</title>
+  <meta name="description" content="The complete OpenClaw setup guide for beginners. Step-by-step walkthrough to install, configure, and launch your own AI agent on WhatsApp — including best model settings, personality setup, memory, and a full CLI command reference.">
+  <meta name="author" content="David J Woodbury">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://davidjwoodbury.com/guides/openclaw-setup-guide.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://davidjwoodbury.com/guides/openclaw-setup-guide.html">
+  <meta property="og:title" content="OpenClaw Setup Guide: Best Settings for Complete Beginners (2026)">
+  <meta property="og:description" content="Complete step-by-step guide to setting up OpenClaw from scratch. Covers install, agent creation, WhatsApp integration, best model settings, and every CLI command you need.">
+  <meta property="og:site_name" content="David J Woodbury">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@davidjustin84">
+  <meta name="twitter:site" content="@davidjustin84">
+  <meta name="twitter:title" content="OpenClaw Setup Guide: Best Settings for Complete Beginners (2026)">
+  <meta name="twitter:description" content="Step-by-step guide to set up your own OpenClaw AI agent from scratch — install, configure, connect WhatsApp, and go live.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "OpenClaw Setup Guide: Best Settings for Complete Beginners (2026)",
+    "description": "Complete step-by-step guide to setting up OpenClaw from scratch — install, configure, build your AI agent, connect WhatsApp, and best settings reference.",
+    "author": {
+      "@type": "Person",
+      "name": "David J Woodbury",
+      "url": "https://davidjwoodbury.com"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "David J Woodbury",
+      "url": "https://davidjwoodbury.com"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://davidjwoodbury.com/guides/openclaw-setup-guide.html"
+    },
+    "datePublished": "2026-03-21",
+    "dateModified": "2026-03-21",
+    "keywords": ["OpenClaw", "OpenClaw setup", "OpenClaw guide", "OpenClaw tutorial", "openclaw.ai", "OpenClaw WhatsApp", "OpenClaw best settings", "AI agent setup", "self-hosted AI agent"],
+    "articleSection": "AI Tools Guide",
+    "inLanguage": "en-US"
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/"><span class="logo">DJW</span><span class="brand-text">David J Woodbury</span></a>
+      <nav aria-label="Primary">
+        <a href="/#tools">AI Tools</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="guide-page" style="max-width:900px; margin:0 auto;">
+
+    <p class="guide-breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/#guides">Guides</a> &rsaquo; OpenClaw Setup Guide</p>
+
+    <h1 class="guide-h1">OpenClaw Setup Guide: Best Settings for Complete Beginners</h1>
+    <p class="guide-meta">By <a href="/">David J Woodbury</a> &nbsp;&middot;&nbsp; Updated March 2026 &nbsp;&middot;&nbsp; 15 min read</p>
+
+    <div class="guide-intro-box">
+      <p>This guide takes you from zero knowledge of OpenClaw to a fully running AI agent — connected to WhatsApp, configured with the best model settings, and operating proactively on your schedule. Every command is copy/paste ready. No coding required. If you can follow a step-by-step guide, you can build this.</p>
+    </div>
+
+    <!-- Table of Contents -->
+    <nav class="toc" aria-label="Table of contents">
+      <h2>What&rsquo;s In This Guide</h2>
+      <ol>
+        <li><a href="#what-is-openclaw">What is OpenClaw?</a></li>
+        <li><a href="#what-can-it-do">What Can an OpenClaw Agent Actually Do?</a></li>
+        <li><a href="#how-it-works">How OpenClaw Works (Core Concepts)</a></li>
+        <li><a href="#requirements">What You Need Before Starting</a></li>
+        <li><a href="#setup">Complete Step-by-Step Setup</a></li>
+        <li><a href="#best-settings">Best Settings Reference</a></li>
+        <li><a href="#key-files">Understanding the Key Files</a></li>
+        <li><a href="#cli-reference">CLI Command Reference</a></li>
+        <li><a href="#troubleshooting">Troubleshooting</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ol>
+    </nav>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 1: What is OpenClaw -->
+    <!-- ============================================================ -->
+    <section id="what-is-openclaw" class="guide-section">
+      <h2>1. What is OpenClaw?</h2>
+      <p>OpenClaw is a self-hosted AI agent platform. It lets you create named AI assistants — called <em>agents</em> — that run on your own server, connect to real messaging channels like WhatsApp, and operate autonomously around the clock.</p>
+      <p>Think of it as a framework for building your own AI employee. You define who the agent is, what it knows about your business, and what it&rsquo;s supposed to do. OpenClaw handles running the AI model, managing the communication channel, scheduling proactive check-ins, and persisting memory between sessions.</p>
+      <p>The entire system is controlled through a command-line interface (CLI). That sounds technical, but in practice it means: you paste commands into a terminal. There is no UI to learn and no coding required. An official reference for all CLI commands is maintained at <a href="https://docs.openclaw.ai/cli" rel="noopener" target="_blank">docs.openclaw.ai/cli</a>.</p>
+      <p>The key word in all of this is <strong>self-hosted</strong>. Your agent runs on infrastructure you control. Your business context, memory, and conversation history stay on your machine — not a third-party server.</p>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 2: What can it do -->
+    <!-- ============================================================ -->
+    <section id="what-can-it-do" class="guide-section">
+      <h2>2. What Can an OpenClaw Agent Actually Do?</h2>
+      <p>Here are real examples of what a configured OpenClaw agent can handle:</p>
+      <ul>
+        <li><strong>Send proactive briefings to your phone via WhatsApp.</strong> The agent wakes up on a schedule, checks what&rsquo;s on your plate, and delivers a priority summary before your day starts — without you asking.</li>
+        <li><strong>Watch for urgent signals.</strong> Configure it to monitor things like overdue tasks, broken workflows, time-sensitive opportunities, or anything else you care about. If something needs attention, it tells you what to do. If everything is fine, it stays quiet.</li>
+        <li><strong>Draft messages and content for you.</strong> Customer messages, campaign copy, follow-up sequences, SOPs, scripts — ask it, it writes it using full knowledge of your business context.</li>
+        <li><strong>Remember your business over time.</strong> The agent builds a persistent memory of your decisions, priorities, and preferences. It carries that context into every conversation and every scheduled check-in.</li>
+        <li><strong>Respond to your WhatsApp messages.</strong> Text your agent from your phone and get a real answer back from an AI that knows who you are and what you&rsquo;re working on.</li>
+        <li><strong>Run on a heartbeat cadence.</strong> Every 30 minutes the agent checks a set of priorities you define. No alerts needed, no intervention from you — it either finds something worth telling you, or it quietly moves on.</li>
+      </ul>
+      <p>The difference between this and just chatting with ChatGPT or Claude: OpenClaw agents are <strong>persistent</strong>, <strong>domain-aware</strong>, and <strong>proactive</strong>. They know who you are, they remember your history, and they reach out to <em>you</em> — you don&rsquo;t have to come to them.</p>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 3: How it works -->
+    <!-- ============================================================ -->
+    <section id="how-it-works" class="guide-section">
+      <h2>3. How OpenClaw Works (Core Concepts)</h2>
+      <p>Before you run a single command, understand these six concepts. They make every setup step make sense.</p>
+
+      <h3>Agents</h3>
+      <p>An agent is an isolated AI instance with its own name, workspace, model, channel connections, and memory. You can run multiple agents — each completely separate. Each gets a dedicated folder on disk (its <em>workspace</em>) that contains its personality files, memory, and configuration. Never share a workspace between two agents.</p>
+
+      <h3>Models</h3>
+      <p>The model is the AI brain powering your agent. OpenClaw supports multiple AI model providers. You set a <strong>primary model</strong> (used by default) and one or more <strong>fallback models</strong> (used automatically if the primary is unavailable). Models are specified in <code>provider/model-name</code> format — for example, <code>nvidia/meta-llama-3.3-70b-instruct</code>.</p>
+
+      <h3>Channels</h3>
+      <p>Channels are the messaging surfaces your agent communicates through. WhatsApp is a supported channel. You add a channel account, authenticate it, and bind your agent to it — after which the agent can send and receive messages through that channel.</p>
+
+      <h3>Workspaces</h3>
+      <p>A workspace is a dedicated folder on disk for one specific agent. It stores all the files that define who the agent is: personality, memory, behavior rules, and identity. Keep each agent&rsquo;s workspace completely separate from all others.</p>
+
+      <h3>Heartbeat</h3>
+      <p>The heartbeat is a recurring polling cycle. On each run (every 30 minutes by default, configured in <code>openclaw.json</code>), OpenClaw wakes your agent, sends it your heartbeat instructions, and waits for a response. If everything is fine, the agent replies <code>HEARTBEAT_OK</code> — which OpenClaw silently discards. Nothing is delivered to your channel. If something needs attention, the agent sends a real message. The net effect: you only hear from your agent when it finds something worth telling you.</p>
+
+      <h3>Memory</h3>
+      <p>Memory is how your agent knows things about you over time. It lives in a <code>MEMORY.md</code> file in the workspace and is indexed with <code>openclaw memory index</code>. The agent reads this context at the start of each task and writes important decisions or lessons back into it over time.</p>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 4: Requirements -->
+    <!-- ============================================================ -->
+    <section id="requirements" class="guide-section">
+      <h2>4. What You Need Before Starting</h2>
+      <ul>
+        <li>
+          <strong>A Linux environment.</strong> OpenClaw runs on Linux. If you&rsquo;re on Windows, use WSL2 (Windows Subsystem for Linux) to get a compatible terminal — it works well. Running it on a small always-on cloud server (a VPS) is recommended so your agent stays active even when your laptop is off.
+        </li>
+        <li>
+          <strong>API credentials for at least one AI model provider.</strong> The recommended primary model is from NVIDIA&rsquo;s API (<code>nvidia/meta-llama-3.3-70b-instruct</code>). For a fallback, use Google&rsquo;s API (<code>google/gemini-2.5-flash</code>). Both providers have free tiers suitable for initial setup. You can also use OpenRouter if you prefer a single API key that covers multiple models.
+        </li>
+        <li>
+          <strong>A WhatsApp account</strong> — if you want channel messaging. This is the phone number your agent will send messages to and receive messages from. You authenticate it during setup using a QR code or pairing code flow.
+        </li>
+        <li>
+          <strong>About 20&ndash;30 minutes.</strong> The commands themselves run quickly. Most of the time goes into filling out your agent&rsquo;s personality and memory files — which is what makes it actually useful.
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 5: Complete Setup -->
+    <!-- ============================================================ -->
+    <section id="setup" class="guide-section">
+      <h2>5. Complete Step-by-Step Setup</h2>
+
+      <!-- Step 1 -->
+      <h3>Step 1 &mdash; Set your details as shell variables</h3>
+      <p>This step creates shortcuts in your terminal so every command below uses your real details automatically. You only do this once per terminal session. If you close the terminal and come back, run this block again first.</p>
+      <p>Open your terminal and paste the block below. <strong>Change the values in quotes to match your own details before running.</strong></p>
+      <pre><code># ================================================
+# FILL IN YOUR DETAILS — change the values, then paste
+# ================================================
+
+export OC_AGENT_ID="myagent"
+export OC_AGENT_NAME="Max"
+export OC_WORKSPACE="$HOME/.openclaw/myagent-workspace"
+export OC_PHONE="+13035550123"
+export OC_TIMEZONE="America/Denver"</code></pre>
+      <ul>
+        <li><code>OC_AGENT_ID</code> — A short ID with no spaces used internally by OpenClaw. Examples: <code>ops</code>, <code>biz</code>, <code>max</code>.</li>
+        <li><code>OC_AGENT_NAME</code> — What you want to call your assistant. It uses this name when it introduces itself. Pick anything.</li>
+        <li><code>OC_WORKSPACE</code> — Where the agent&rsquo;s files live on disk. Leave as-is unless you have a specific reason to change the path.</li>
+        <li><code>OC_PHONE</code> — Your WhatsApp number in E.164 format: a <code>+</code> sign, your country code, then your number with no spaces or dashes. US example: <code>+13035550123</code>.</li>
+        <li><code>OC_TIMEZONE</code> — Your IANA timezone. Common US options: <code>America/New_York</code>, <code>America/Chicago</code>, <code>America/Denver</code>, <code>America/Los_Angeles</code>.</li>
+      </ul>
+      <p>After pasting, confirm your values printed correctly:</p>
+      <pre><code>echo "Agent:     $OC_AGENT_NAME ($OC_AGENT_ID)"
+echo "Workspace: $OC_WORKSPACE"
+echo "Phone:     $OC_PHONE"
+echo "Timezone:  $OC_TIMEZONE"</code></pre>
+      <p>If anything looks wrong, fix the export block and run it again before continuing.</p>
+
+      <!-- Step 2 -->
+      <h3>Step 2 &mdash; Create your workspace folder</h3>
+      <pre><code>mkdir -p "$OC_WORKSPACE"
+echo "Workspace created at: $OC_WORKSPACE"</code></pre>
+      <p>This is the folder where everything about your agent lives — personality, memory, and configuration. Back it up periodically.</p>
+
+      <!-- Step 3 -->
+      <h3>Step 3 &mdash; Install OpenClaw</h3>
+      <p>If OpenClaw is already installed on your machine, skip to Step 4.</p>
+      <pre><code>curl -fsSL https://get.openclaw.ai/install.sh | bash</code></pre>
+      <p>After install, run a health check and automated repair:</p>
+      <pre><code>openclaw doctor --fix</code></pre>
+      <p><code>doctor --fix</code> checks OpenClaw&rsquo;s own configuration and automatically repairs common issues. Read carefully any errors it cannot fix before continuing — the official docs at <a href="https://docs.openclaw.ai/cli" rel="noopener" target="_blank">docs.openclaw.ai/cli</a> cover troubleshooting steps.</p>
+
+      <!-- Step 4 -->
+      <h3>Step 4 &mdash; Initialize OpenClaw</h3>
+      <p>This sets up OpenClaw in your workspace. Use the wizard for your first setup — it walks you through the key questions interactively:</p>
+      <pre><code>openclaw setup --workspace "$OC_WORKSPACE" --wizard</code></pre>
+      <p>Or, if you prefer a fully non-interactive flow:</p>
+      <pre><code>openclaw onboard --workspace "$OC_WORKSPACE" --non-interactive --mode local</code></pre>
+
+      <!-- Step 5 -->
+      <h3>Step 5 &mdash; Create your agent</h3>
+      <pre><code>openclaw agents add "$OC_AGENT_ID" \
+  --workspace "$OC_WORKSPACE" \
+  --model nvidia/meta-llama-3.3-70b-instruct \
+  --non-interactive</code></pre>
+      <p>This creates an isolated AI instance with its own workspace. The model set here (<code>nvidia/meta-llama-3.3-70b-instruct</code>) is the recommended primary — a strong, fast model that handles business writing and complex reasoning well. See the <a href="#best-settings">Best Settings</a> section for why.</p>
+      <p>Verify the agent was created successfully:</p>
+      <pre><code>openclaw agents list --json
+openclaw status --deep</code></pre>
+
+      <!-- Step 6 -->
+      <h3>Step 6 &mdash; Configure models (primary and fallback)</h3>
+      <p>Set the primary model explicitly in OpenClaw&rsquo;s config:</p>
+      <pre><code>openclaw models set nvidia/meta-llama-3.3-70b-instruct</code></pre>
+      <p>Add a fallback model so your agent keeps running if the primary is ever slow or unavailable:</p>
+      <pre><code>openclaw models fallbacks add google/gemini-2.5-flash</code></pre>
+      <p>Now authenticate with your model providers. Run the auth flow for each one you&rsquo;re using:</p>
+      <pre><code>openclaw models auth login --provider nvidia
+openclaw models auth login --provider google</code></pre>
+      <p>Verify everything is configured correctly:</p>
+      <pre><code>openclaw models status --probe</code></pre>
+      <div class="guide-callout">
+        <strong>Note on --probe:</strong> This runs real requests against each configured provider to verify connectivity. It may consume a small number of tokens. Add <code>--probe-max-tokens 10</code> to keep it minimal: <code>openclaw models status --probe --probe-max-tokens 10</code>
+      </div>
+
+      <!-- Step 7 -->
+      <h3>Step 7 &mdash; Write your agent&rsquo;s personality (SOUL.md)</h3>
+      <p>This is the most important step. The <code>SOUL.md</code> file tells your agent who it is, what it knows, and how it should behave. The more specific and accurate you make this file, the better every response will be. A vague SOUL.md produces generic answers. A detailed, specific one produces an assistant that actually understands your domain.</p>
+      <p>The command below creates the file using your workspace variable. <strong>Open the file afterward in any text editor and replace every bracketed placeholder with your real information.</strong></p>
+      <pre><code>cat &gt; "$OC_WORKSPACE/SOUL.md" &lt;&lt; 'SOUL_EOF'
+# Who You Are
+
+Your name is [YOUR AGENT NAME HERE]. You work with [YOUR NAME / COMPANY NAME].
+
+You are not a generic assistant. You are a specialist in [YOUR INDUSTRY OR ROLE].
+
+# What You Know
+
+[Write what your agent should be an expert in. Be specific:
+- Industry terminology and technical details
+- Seasonal patterns and demand cycles
+- Common failure modes and risks to watch for
+- Key metrics that matter in this field
+- What success and failure look like]
+
+# How You Think
+
+Be direct. Give specific recommendations — not lists of maybes.
+Respect the owner's time. When something needs attention, name it and say exactly what to do.
+When nothing is urgent, reply HEARTBEAT_OK and stay quiet.
+No filler. No performative enthusiasm.
+
+# Communication Style
+
+Professional but human. Direct but not cold.
+Short, specific, and grounded in the actual business context.
+When drafting messages for others, write like a person, not a bot.
+
+# What You Help With
+
+[List the specific recurring tasks you want this agent to handle. Be explicit. Examples:
+- Morning priority briefings
+- Flagging overdue items
+- Drafting customer follow-up messages
+- Campaign copy for seasonal promotions
+- Summarizing the day's work at end of day
+- Answering domain-specific questions]
+SOUL_EOF
+
+echo "SOUL.md written to $OC_WORKSPACE"</code></pre>
+
+      <!-- Step 8 -->
+      <h3>Step 8 &mdash; Define agent behavior rules (AGENTS.md)</h3>
+      <p><code>AGENTS.md</code> defines the startup sequence and action boundaries — what the agent does automatically at the start of every session, and what requires your approval before it acts.</p>
+      <pre><code>cat &gt; "$OC_WORKSPACE/AGENTS.md" &lt;&lt; 'AGENTS_EOF'
+# AGENTS.md
+
+## Startup Sequence (every new session)
+
+1. Read SOUL.md.
+2. Read MEMORY.md.
+3. If present, read the latest daily note file.
+4. Output a short readiness brief:
+   - Top 3 active priorities
+   - Top 3 risks or blockers
+   - Best next action right now
+
+Do this automatically without being asked.
+
+## Action Boundaries
+
+Safe to do without asking first:
+- Analyze files, plans, content, and strategy
+- Draft messages, scripts, checklists, and SOPs
+- Organize workspace documents and memory
+- Propose experiments and next steps
+
+Always ask before:
+- Sending messages to external contacts
+- Publishing any content
+- Spending money or committing resources
+- Deleting or overwriting data
+
+## Security
+
+- Never expose secrets or credentials in any output
+- Redact credentials in all logs
+- Keep sensitive business context out of shared channels
+AGENTS_EOF
+
+echo "AGENTS.md written."</code></pre>
+
+      <!-- Step 9 -->
+      <h3>Step 9 &mdash; Seed your memory (MEMORY.md)</h3>
+      <p>Memory gives your agent durable context about your business. Seed it now with the basics — add more detail over time as you use the agent.</p>
+      <pre><code>cat &gt; "$OC_WORKSPACE/MEMORY.md" &lt;&lt; MEMORY_EOF
+# MEMORY.md
+
+## Business Basics
+
+Owner: [YOUR NAME]
+Phone: $OC_PHONE
+Timezone: $OC_TIMEZONE
+
+## Strategic Priorities
+
+- Priority 1: [Your current top goal]
+- Priority 2:
+- Priority 3:
+
+## Working Preferences
+
+- Communication: [How you like information delivered — bullets, brief, detailed, etc.]
+- Decision style: [How you want recommendations framed — direct, options, analysis first, etc.]
+
+## Active Constraints
+
+[Note any current blockers, budget limits, or things to avoid]
+
+## Recent Lessons
+
+[Add key decisions and learnings here over time. Remove stale entries.]
+MEMORY_EOF
+
+echo "MEMORY.md written."</code></pre>
+      <div class="guide-callout">
+        Keep MEMORY.md lean and current. Only durable, high-value facts belong here. Remove stale assumptions aggressively — outdated context creates worse responses than no context. Never store credentials or secrets in memory files.
+      </div>
+
+      <!-- Step 10 -->
+      <h3>Step 10 &mdash; Configure heartbeat behavior (HEARTBEAT.md)</h3>
+      <p><code>HEARTBEAT.md</code> controls what your agent <em>does</em> on each proactive check-in cycle. It does <em>not</em> control the frequency — that is set in <code>openclaw.json</code> and defaults to every 30 minutes. Write this file to match your actual priorities.</p>
+      <div class="guide-callout">
+        <strong>Important:</strong> If <code>HEARTBEAT.md</code> has only headings and no meaningful content, OpenClaw skips the run entirely and makes no API call. Keep real content here to activate heartbeat behavior.
+      </div>
+      <pre><code>cat &gt; "$OC_WORKSPACE/HEARTBEAT.md" &lt;&lt; 'HB_EOF'
+# HEARTBEAT.md
+
+## Cadence
+
+- Heartbeat frequency is configured in openclaw.json (default: every 30 minutes).
+- This file controls what the agent checks on each run — not how often.
+- Target 2 to 4 meaningful proactive messages per day. Not more.
+- Quiet hours: 23:00 to 08:00 in the configured timezone (set via activeHours in openclaw.json).
+
+## Priority Checks
+
+On each heartbeat run, check the following in order:
+
+1. Is there any urgent issue in active revenue or operational channels?
+2. Is there a deadline or commitment in the next 24 hours that needs preparation?
+3. Is there a high-confidence opportunity worth flagging with clear upside?
+4. Does MEMORY.md have stale assumptions that should be updated?
+
+## Response Rules
+
+- If nothing needs attention: reply HEARTBEAT_OK at the start or end of the reply.
+  OpenClaw strips and suppresses HEARTBEAT_OK — the reply is never delivered. Silent is correct.
+- If something needs attention: return only the alert text. Do not include HEARTBEAT_OK.
+- Do not repeat or reference old tasks from prior chat history. Only act on what this file defines.
+
+## Alert Format
+
+When sending a proactive alert, use this structure:
+1. Signal: what changed or was detected
+2. Impact: why it matters
+3. Action: exactly what to do right now
+
+## Escalate Immediately For
+
+- Security exposure risk
+- Public-facing outage or broken service
+- Time-bound launch blocker
+- Legal or compliance risk in any active promotion
+HB_EOF
+
+echo "HEARTBEAT.md written."</code></pre>
+
+      <!-- Step 11 -->
+      <h3>Step 11 &mdash; Connect WhatsApp</h3>
+      <p>Add your WhatsApp account and run the authentication flow:</p>
+      <pre><code>openclaw channels add --channel whatsapp --account default --name "$OC_AGENT_NAME"
+openclaw channels login --channel whatsapp --account default</code></pre>
+      <p>Follow the on-screen instructions. This typically involves scanning a QR code or completing a pairing code flow in your WhatsApp app.</p>
+      <p>If your environment uses pairing codes, list and approve them:</p>
+      <pre><code>openclaw pairing list --channel whatsapp
+openclaw pairing approve --channel whatsapp YOUR_PAIRING_CODE --notify</code></pre>
+      <p>Bind your agent to the WhatsApp channel so it can send and receive:</p>
+      <pre><code>openclaw agents bind --agent "$OC_AGENT_ID" --bind whatsapp:default --json</code></pre>
+      <p>Verify the channel is healthy:</p>
+      <pre><code>openclaw channels status --probe</code></pre>
+      <p>Check the binding is correct:</p>
+      <pre><code>openclaw agents bindings --json</code></pre>
+
+      <!-- Step 12 -->
+      <h3>Step 12 &mdash; Run security audit</h3>
+      <p>Run these checks in order before going live:</p>
+      <pre><code>openclaw config validate
+openclaw doctor --deep
+openclaw security audit --deep</code></pre>
+      <p>If the audit suggests fixes that look safe to apply:</p>
+      <pre><code>openclaw security audit --fix</code></pre>
+      <p>Also audit your secrets storage:</p>
+      <pre><code>openclaw secrets audit</code></pre>
+      <p>Address any critical findings before proceeding. Do not skip this step.</p>
+
+      <!-- Step 13 -->
+      <h3>Step 13 &mdash; Index memory and run first test</h3>
+      <p>Index your workspace memory so the agent can search it:</p>
+      <pre><code>openclaw memory index
+openclaw memory status</code></pre>
+      <p>Send a test message to your agent locally to confirm it&rsquo;s working:</p>
+      <pre><code>openclaw agent --message "Read your startup sequence and give me a brief readiness summary." --local --json</code></pre>
+      <p>You should get back a coherent summary that reflects the content in your <code>SOUL.md</code> and <code>MEMORY.md</code> files. If the response is generic or ignores your setup, enrich those files and re-run <code>openclaw memory index</code> before continuing.</p>
+
+      <!-- Step 14 -->
+      <h3>Step 14 &mdash; Back up your baseline</h3>
+      <pre><code>openclaw backup create
+openclaw backup verify</code></pre>
+      <p>Run this after the initial setup and again anytime you make significant changes to your configuration or memory files.</p>
+
+      <div class="guide-callout">
+        <strong>You&rsquo;re live.</strong> Your agent is now running, connected to WhatsApp, and polling on its heartbeat schedule. The next step is to enrich your <code>SOUL.md</code> and <code>MEMORY.md</code> over time as your agent learns more about your business.
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 6: Best Settings -->
+    <!-- ============================================================ -->
+    <section id="best-settings" class="guide-section">
+      <h2>6. Best Settings Reference</h2>
+      <p>These are the settings that work best in real usage. They&rsquo;re tuned for reliability, response quality, and practical day-to-day operation.</p>
+
+      <table class="guide-table">
+        <thead>
+          <tr>
+            <th>Setting</th>
+            <th>Recommended Value</th>
+            <th>Why</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Primary model</td>
+            <td><code>nvidia/meta-llama-3.3-70b-instruct</code></td>
+            <td>Strong business writing, handles long context well, fast response times</td>
+          </tr>
+          <tr>
+            <td>Fallback model</td>
+            <td><code>google/gemini-2.5-flash</code></td>
+            <td>Fast and reliable — keeps things running if the primary is slow or unavailable</td>
+          </tr>
+          <tr>
+            <td>Heartbeat frequency</td>
+            <td>Every 30 minutes (default)</td>
+            <td>Frequent enough to catch urgent issues; not so aggressive it burns tokens unnecessarily</td>
+          </tr>
+          <tr>
+            <td>Quiet hours</td>
+            <td>23:00&ndash;08:00, your timezone</td>
+            <td>No alerts while you sleep; set via <code>activeHours</code> in <code>openclaw.json</code></td>
+          </tr>
+          <tr>
+            <td>Proactive messages per day</td>
+            <td>2&ndash;4 substantive messages</td>
+            <td>Enough to be genuinely useful; low enough that you still read everything</td>
+          </tr>
+          <tr>
+            <td>Tools profile</td>
+            <td>Messaging preset: <code>sessions_list</code>, <code>sessions_history</code>, <code>sessions_send</code>, <code>session_status</code>, <code>message</code></td>
+            <td>Minimum effective stack for WhatsApp messaging — add tools only as needed</td>
+          </tr>
+          <tr>
+            <td>Skills</td>
+            <td>All enabled</td>
+            <td>Gives the agent full capability without unnecessary restriction</td>
+          </tr>
+          <tr>
+            <td>Block streaming</td>
+            <td>Off</td>
+            <td>For most business use cases, off is the correct setting</td>
+          </tr>
+          <tr>
+            <td>Workspace isolation</td>
+            <td>One dedicated workspace per agent</td>
+            <td>Sharing workspaces between agents corrupts state — always keep them separate</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Check and update model settings at any time</h3>
+      <pre><code># Check current model configuration
+openclaw models status
+
+# Change primary model
+openclaw config set agents.defaults.model.primary nvidia/meta-llama-3.3-70b-instruct
+
+# View all configured fallbacks
+openclaw models fallbacks list
+
+# Scan for models available with your current auth
+openclaw models scan
+
+# Full model catalog
+openclaw models list --all --json</code></pre>
+
+      <h3>Using OpenRouter models</h3>
+      <p>If you use OpenRouter as your model provider (which gives you access to many models via a single API key), always include the full <code>openrouter/</code> prefix. For example:</p>
+      <pre><code>openclaw models set openrouter/moonshotai/kimi-k2</code></pre>
+      <p>If you omit the <code>openrouter/</code> prefix for a model ID that contains a <code>/</code>, OpenClaw will not route it correctly. When in doubt, always include the provider prefix.</p>
+
+      <h3>Auth profiles</h3>
+      <p>If you need to add new auth credentials or re-authenticate after expiry:</p>
+      <pre><code>openclaw models auth add                         # Add new auth profile interactively
+openclaw models auth login --provider &lt;id&gt;      # Run provider auth flow
+openclaw models auth paste-token                 # Paste a token from outside the terminal</code></pre>
+      <p>Check auth status across all providers:</p>
+      <pre><code>openclaw models status --probe-provider nvidia
+openclaw models status --probe-provider google</code></pre>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 7: Key Files -->
+    <!-- ============================================================ -->
+    <section id="key-files" class="guide-section">
+      <h2>7. Understanding the Key Files</h2>
+      <p>Your agent&rsquo;s workspace is controlled by a set of plain-text markdown files. These are what make your agent specific to you. Here&rsquo;s what each one does:</p>
+
+      <table class="guide-table">
+        <thead>
+          <tr>
+            <th>File</th>
+            <th>What It Controls</th>
+            <th>When to Edit It</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>SOUL.md</code></td>
+            <td>The agent&rsquo;s identity: who it is, what it knows, communication style, and what it helps with</td>
+            <td>At setup; whenever your business, role, or domain focus changes significantly</td>
+          </tr>
+          <tr>
+            <td><code>AGENTS.md</code></td>
+            <td>Startup sequence and action boundaries — what the agent reads at session start, what it can do alone, what requires approval</td>
+            <td>At setup; if you change approval rules or want different startup behavior</td>
+          </tr>
+          <tr>
+            <td><code>HEARTBEAT.md</code></td>
+            <td>What the agent checks on each proactive poll (not the frequency — that&rsquo;s in <code>openclaw.json</code>)</td>
+            <td>Whenever your priorities change or you want different proactive checks</td>
+          </tr>
+          <tr>
+            <td><code>MEMORY.md</code></td>
+            <td>Long-term business context: current priorities, decisions made, working preferences, lessons learned</td>
+            <td>Continuously — add decisions and learnings, remove stale info as things change</td>
+          </tr>
+          <tr>
+            <td><code>IDENTITY.md</code></td>
+            <td>Optional: immutable core identity facts — role, timezone, hard constraints the agent never violates</td>
+            <td>Once at initial setup; rarely changes after</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="guide-callout">
+        After editing any of these files, re-run <code>openclaw memory index</code> to ensure changes are picked up in the agent&rsquo;s memory search.
+      </div>
+
+      <h3>What makes a great SOUL.md</h3>
+      <p>This is where most people underinvest and then wonder why their agent gives generic answers. The best SOUL.md files include:</p>
+      <ul>
+        <li>Industry-specific terminology the agent should know and use</li>
+        <li>Seasonal patterns, cycles, or recurring events relevant to your business</li>
+        <li>Common failure modes, risks, or problems to watch for</li>
+        <li>The specific metrics that matter most to you</li>
+        <li>Names of tools, platforms, or systems the agent should be aware of</li>
+        <li>Explicit communication preferences (bullet points vs. prose, brief vs. detailed, etc.)</li>
+        <li>A clear list of recurring tasks you actually want it to handle</li>
+      </ul>
+      <p>The more grounded in your real context, the better every response will be.</p>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 8: CLI Reference -->
+    <!-- ============================================================ -->
+    <section id="cli-reference" class="guide-section">
+      <h2>8. CLI Command Reference</h2>
+      <p>A practical cheat sheet of the most useful commands, grouped by purpose. The complete reference is at <a href="https://docs.openclaw.ai/cli" rel="noopener" target="_blank">docs.openclaw.ai/cli</a>.</p>
+
+      <h3>Health and Diagnostics</h3>
+      <pre><code>openclaw status --deep            # Full system status overview
+openclaw health --json            # Health check in JSON format
+openclaw doctor --deep            # Deep diagnostic with repair suggestions
+openclaw doctor --fix             # Auto-fix common issues
+openclaw gateway status --deep    # Gateway service status
+openclaw gateway restart          # Restart gateway service
+openclaw logs --follow            # Live log stream</code></pre>
+
+      <h3>Agent Management</h3>
+      <pre><code>openclaw agents list --json                                         # List all agents
+openclaw agents bindings --json                                     # Show channel bindings
+openclaw agents bind --agent &lt;id&gt; --bind whatsapp:default --json   # Bind to WhatsApp
+openclaw agents unbind --agent &lt;id&gt; --bind whatsapp:default --json # Unbind</code></pre>
+
+      <h3>Model Management</h3>
+      <pre><code>openclaw models status                       # Current model config overview
+openclaw models status --probe               # Live probe (consumes tokens)
+openclaw models status --probe-max-tokens 10 # Probe with token limit
+openclaw models status --agent &lt;id&gt;         # Agent-specific model status
+openclaw models set &lt;provider/model&gt;        # Set primary model
+openclaw models fallbacks add &lt;model&gt;       # Add fallback model
+openclaw models fallbacks list              # List configured fallbacks
+openclaw models scan                         # Scan available models
+openclaw models list --all --json            # Full model catalog
+openclaw models auth add                     # Add new auth profile
+openclaw models auth login --provider &lt;id&gt;  # Run provider auth flow</code></pre>
+
+      <h3>Channel Management (WhatsApp)</h3>
+      <pre><code>openclaw channels add --channel whatsapp --account default --name "&lt;name&gt;"
+openclaw channels login --channel whatsapp --account default
+openclaw channels status --probe
+openclaw channels logs --channel whatsapp --lines 200
+openclaw pairing list --channel whatsapp
+openclaw pairing approve --channel whatsapp &lt;CODE&gt; --notify</code></pre>
+
+      <h3>Memory</h3>
+      <pre><code>openclaw memory index   # Index workspace memory files
+openclaw memory status  # Memory index status</code></pre>
+
+      <h3>Config</h3>
+      <pre><code>openclaw config file                                  # Show active config file path
+openclaw config get agents.defaults.model.primary
+openclaw config set agents.defaults.model.primary &lt;model&gt;
+openclaw config validate</code></pre>
+
+      <h3>Security and Secrets</h3>
+      <pre><code>openclaw security audit          # Run security audit
+openclaw security audit --deep   # Deep security audit
+openclaw security audit --fix    # Audit with auto-fix
+openclaw secrets reload          # Reload secrets store
+openclaw secrets audit           # Audit secrets health</code></pre>
+
+      <h3>Sessions</h3>
+      <pre><code>openclaw sessions --json   # List active sessions</code></pre>
+
+      <h3>Backup</h3>
+      <pre><code>openclaw backup create   # Create backup
+openclaw backup verify   # Verify backup integrity</code></pre>
+
+      <h3>Useful Global Flags</h3>
+      <pre><code>--json          # Machine-readable JSON output (works on most commands)
+--plain         # Plain text output, no formatting
+--profile &lt;name&gt;  # Use isolated state at ~/.openclaw-&lt;name&gt;
+--dev              # Use development-isolated state agent</code></pre>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 9: Troubleshooting -->
+    <!-- ============================================================ -->
+    <section id="troubleshooting" class="guide-section">
+      <h2>9. Troubleshooting</h2>
+
+      <h3>Agent isn&rsquo;t responding on WhatsApp</h3>
+      <ul>
+        <li>Run <code>openclaw channels status --probe</code> — check that the channel shows healthy.</li>
+        <li>Run <code>openclaw agents bindings --json</code> — confirm the agent is bound to <code>whatsapp:default</code>.</li>
+        <li>Check <code>openclaw channels logs --channel whatsapp --lines 100</code> for errors.</li>
+        <li>Run <code>openclaw gateway status --deep</code> — if the gateway is down, restart it with <code>openclaw gateway restart</code>.</li>
+      </ul>
+
+      <h3>Model errors or very slow responses</h3>
+      <ul>
+        <li>Run <code>openclaw models status --probe</code> to verify provider auth and connectivity.</li>
+        <li>If the primary model is failing, your fallback should activate automatically. Run <code>openclaw models fallbacks list</code> to confirm a fallback is configured.</li>
+        <li>Re-authenticate with <code>openclaw models auth login --provider &lt;id&gt;</code> if auth has expired.</li>
+      </ul>
+
+      <h3>Heartbeat alerts not arriving</h3>
+      <ul>
+        <li>Check quiet hours in <code>openclaw.json</code>. If you&rsquo;re inside a quiet window, alerts are suppressed by design.</li>
+        <li>Review <code>HEARTBEAT.md</code> in the workspace. If it contains only headings and no actual content, OpenClaw skips the run entirely.</li>
+        <li>Run <code>openclaw logs --follow</code> to watch heartbeat runs in real time and see what&rsquo;s happening.</li>
+      </ul>
+
+      <h3>Agent responses feel generic or miss context</h3>
+      <ul>
+        <li>Enrich <code>SOUL.md</code> with more specific business details — industry terminology, actual metrics, concrete priorities.</li>
+        <li>Add durable facts to <code>MEMORY.md</code> and re-run <code>openclaw memory index</code>.</li>
+        <li>Run a direct test: <code>openclaw agent --message "What are my top priorities right now?" --local --json</code> and check whether the response references your actual context.</li>
+      </ul>
+
+      <h3>General health check sequence</h3>
+      <p>Run this after any major change or when something feels wrong:</p>
+      <pre><code>openclaw doctor --deep
+openclaw config validate
+openclaw security audit
+openclaw models status --probe
+openclaw channels status --probe</code></pre>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 10: FAQ -->
+    <!-- ============================================================ -->
+    <section id="faq" class="guide-section">
+      <h2>10. FAQ</h2>
+
+      <div class="guide-faq">
+        <details open>
+          <summary>Do I need to know how to code to use OpenClaw?</summary>
+          <p>No. The entire setup is copy/paste terminal commands. You will need to fill in a few text files with your business details, but there is no programming required. If you can follow a numbered guide and paste text into a terminal, you can get this running.</p>
+        </details>
+
+        <details>
+          <summary>What does &ldquo;self-hosted&rdquo; mean and why does it matter?</summary>
+          <p>Self-hosted means OpenClaw runs on a server you control — not a third-party cloud service. Your business context, memory files, and conversation history are stored on your own machine. You&rsquo;re not relying on someone else&rsquo;s infrastructure, and there&rsquo;s no vendor lock-in. The tradeoff is that you&rsquo;re responsible for keeping the server running, which is why an always-on machine (like a small VPS) is recommended over running it on a laptop.</p>
+        </details>
+
+        <details>
+          <summary>What platform does OpenClaw run on?</summary>
+          <p>OpenClaw runs on Linux. If you&rsquo;re on Windows, use WSL2 (Windows Subsystem for Linux) to get a compatible Linux terminal. Most people run their agent on a small cloud VPS so it&rsquo;s always on. Running it on your local machine is fine for testing, but the agent will go offline whenever the machine is off or asleep.</p>
+        </details>
+
+        <details>
+          <summary>Does OpenClaw cost money?</summary>
+          <p>OpenClaw itself is free to install. The cost comes from the AI model API calls. Both NVIDIA and Google have free tiers sufficient for initial testing. Real ongoing costs depend on usage — heartbeat calls every 30 minutes with brief instructions stay very low. Check each provider&rsquo;s current pricing before committing to a setup.</p>
+        </details>
+
+        <details>
+          <summary>Can I run more than one agent?</summary>
+          <p>Yes. Each agent gets its own unique ID, a dedicated workspace, and its own channel bindings. They run completely independently. The one firm rule: never share a workspace between two agents. Each agent must have its own separate folder.</p>
+        </details>
+
+        <details>
+          <summary>What models work with OpenClaw?</summary>
+          <p>OpenClaw supports multiple AI model providers. Models are referenced in <code>provider/model-name</code> format. For OpenRouter models (which give you access to many models through one API key), always include the full <code>openrouter/</code> prefix — for example, <code>openrouter/moonshotai/kimi-k2</code>. Run <code>openclaw models scan</code> to see what&rsquo;s available with your current authentication, or <code>openclaw models list --all --json</code> for the full catalog.</p>
+        </details>
+
+        <details>
+          <summary>How is this different from just using ChatGPT or Claude directly?</summary>
+          <p>Three things make it fundamentally different. First, <strong>persistence</strong>: your agent remembers your business context across every session — you don&rsquo;t re-explain who you are every time. Second, <strong>proactivity</strong>: it reaches out to you on a schedule rather than waiting for you to start a conversation. Third, <strong>channel integration</strong>: it lives in WhatsApp, not a browser tab you have to open. The result is less like a tool you use and more like an assistant that&rsquo;s always working alongside you.</p>
+        </details>
+
+        <details>
+          <summary>What happens if the primary model goes down?</summary>
+          <p>If you&rsquo;ve configured a fallback model (which this guide covers in Step 6), OpenClaw switches to it automatically. The agent continues running without any action from you. This is why setting a fallback is recommended — it gives you resilience without any extra work at runtime.</p>
+        </details>
+
+        <details>
+          <summary>Where is the official CLI documentation?</summary>
+          <p>The full CLI reference is maintained at <a href="https://docs.openclaw.ai/cli" rel="noopener" target="_blank">docs.openclaw.ai/cli</a>. This guide covers the commands needed for initial setup and daily operation, but the official docs are the definitive source for every flag and option.</p>
+        </details>
+      </div>
+    </section>
+
+    <hr style="border-color: var(--glass-border); margin: 3rem 0 2rem;">
+    <p class="guide-footer-links"><strong>More from David:</strong> <a href="/">davidjwoodbury.com</a> &nbsp;&middot;&nbsp; <a href="/guides/opus-to-shorts-workflow.html">Opus.pro to Shorts Workflow</a> &nbsp;&middot;&nbsp; <a href="/#contact">Consulting</a></p>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 David J Woodbury. All rights reserved.</p>
+      <p class="disclosure"><strong>Affiliate Disclosure:</strong> Some links on this site are affiliate links. I may earn a commission if you purchase through my links at no extra cost to you.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
