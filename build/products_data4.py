@@ -68,7 +68,7 @@ PRODUCTS += [
         "commission": "50%",
         "niche": "AI software",
         "sales_url": "https://getomnibrain.com",
-        "affiliate_url": None,  # TODO: replace with https://jvz7.com/c/298459/{PRODUCT_ID}/ — launches Oct 6, 2026; look up OmniBrain in JVZoo dashboard after launch
+        "affiliate_url": "https://jvz7.com/c/298459/424133/",
         "rating": "3.5",
         "tagline": "\"First of Its Kind on JVZoo\" AI Software (Launches Oct 6)",
         "badge": "Launching October 6, 2026",

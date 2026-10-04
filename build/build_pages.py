@@ -8,7 +8,8 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 PRODUCTS = []
 _ns = {"PRODUCTS": PRODUCTS}
-for _f in ["products_data.py", "products_data2.py", "products_data3.py", "products_data4.py"]:
+for _f in ["products_data.py", "products_data2.py", "products_data3.py", "products_data4.py",
+         "products_data5.py", "products_data6.py", "products_data7.py"]:
     with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), _f)) as _fh:
         exec(_fh.read(), _ns)
 PRODUCTS = _ns["PRODUCTS"]
@@ -63,6 +64,16 @@ def build_page(p):
     link, todo_comment = cta_link(p)
     slug_safe = esc(p["slug"])
 
+    vendor_bit = f" by {esc(p['vendor'])}" if p.get("vendor") and p["vendor"] != "Unknown" else ""
+    if p.get("price") == "Unknown":
+        price_bit = ""
+        pricing_lede = "Pricing isn't listed on the sales page — check the link below for current pricing."
+        price_main = '<p class="price-main">See sales page</p>'
+    else:
+        price_bit = f" at {esc(p['price'])} {esc(p['price_note'])}"
+        pricing_lede = f"{esc(p['name'])} is {esc(p['price'])} {esc(p['price_note'])} for the front end."
+        price_main = f"<p class=\"price-main\">{esc(p['price'])}<span style=\"font-size:1.2rem;font-weight:400\"> {esc(p['price_note'])}</span></p>"
+
     features_html = "\n".join(
         f'''        <div class="feature-card">
           <span class="feature-icon">{icon}</span>
@@ -93,33 +104,43 @@ def build_page(p):
         f"{p['price']} {p['price_note']}, {p['commission']} affiliate commission. {p['tagline']}"
     )
 
-    review_json = """  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "headline": "%s",
-    "description": "%s",
-    "author": {"@type": "Person", "name": "David J Woodbury", "url": "%s"},
-    "publisher": {"@type": "Person", "name": "David J Woodbury", "url": "%s"},
-    "itemReviewed": {
-      "@type": "SoftwareApplication",
-      "name": %s,
-      "applicationCategory": "BusinessApplication",
-      "description": %s,
-      "offers": {"@type": "Offer", "price": %s, "priceCurrency": "USD"}
-    },
-    "reviewRating": {"@type": "Rating", "ratingValue": "%s", "bestRating": "5"},
-    "mainEntityOfPage": {"@type": "WebPage", "@id": "%s"}
-  }
-  </script>""" % (
-        esc(p["meta_title"]),
-        esc(p["meta_desc"]),
-        SITE, SITE,
-        json_str(p["name"]),
-        json_str(re.sub(r"<[^>]+>", "", p["highlight"])),
-        json_str(p["price"].replace("$", "")),
-        p["rating"],
-        url,
+    # Structured data: item type is SoftwareApplication for software, Product for
+    # training/info products. Offers only when price is a clean numeric value.
+    item_type = p.get("item_type", "SoftwareApplication")
+    if item_type == "SoftwareApplication":
+        item_block = (
+            '"@type": "SoftwareApplication",\n'
+            f'      "name": {json_str(p["name"])},\n'
+            '      "applicationCategory": "BusinessApplication",\n'
+            f'      "description": {json_str(re.sub(r"<[^>]+>", "", p["highlight"]))}'
+        )
+    else:
+        item_block = (
+            f'"@type": {json_str(item_type)},\n'
+            f'      "name": {json_str(p["name"])},\n'
+            f'      "description": {json_str(re.sub(r"<[^>]+>", "", p["highlight"]))}'
+        )
+    price_m = re.match(r"^\$([\d,]+(?:\.\d{1,2})?)$", (p.get("price") or "").strip())
+    offers_block = (
+        f',\n      "offers": {{"@type": "Offer", "price": '
+        f'"{price_m.group(1).replace(",", "")}", "priceCurrency": "USD"}}\n'
+        if price_m else "\n"
+    )
+    review_json = (
+        '  <script type="application/ld+json">\n'
+        "  {\n"
+        '    "@context": "https://schema.org",\n'
+        '    "@type": "Review",\n'
+        f'    "headline": "{esc(p["meta_title"])}",\n'
+        f'    "description": "{esc(p["meta_desc"])}",\n'
+        f'    "author": {{"@type": "Person", "name": "David J Woodbury", "url": "{SITE}"}},\n'
+        f'    "publisher": {{"@type": "Person", "name": "David J Woodbury", "url": "{SITE}"}},\n'
+        '    "itemReviewed": {\n'
+        f"      {item_block}{offers_block}"
+        '    },\n'
+        f'    "mainEntityOfPage": {{"@type": "WebPage", "@id": "{url}"}}\n'
+        "  }\n"
+        "  </script>"
     )
 
     todo_html = f"\n  {todo_comment}" if todo_comment else ""
@@ -200,7 +221,7 @@ def build_page(p):
     <div class="lp-hero">
       <div class="lp-badge">{esc(p['badge'])}</div>
       <h1>{esc(p['tagline'])}</h1>
-      <p class="subhead">{esc(p['name'])} by {esc(p['vendor'])} — launched {esc(p['launch_date'])} on JVZoo at {esc(p['price'])} {esc(p['price_note'])}. Here's my honest take.</p>
+      <p class="subhead">{esc(p['name'])}{vendor_bit} — launched {esc(p['launch_date'])} on JVZoo{price_bit}. Here's my honest take.</p>
       {todo_html}
       <a href="{esc(link)}" target="_blank" rel="nofollow sponsored" class="lp-cta-primary">
         Check Out {esc(p['name'])} →
@@ -257,11 +278,11 @@ def build_page(p):
     <!-- Pricing -->
     <section class="lp-section">
       <h2>What's the Investment?</h2>
-      <p>{esc(p['name'])} is {esc(p['price'])} {esc(p['price_note'])} for the front end.</p>
+      <p>{pricing_lede}</p>
 
       <div class="pricing-box">
-        <p class="price-main">{esc(p['price'])}<span style="font-size:1.2rem;font-weight:400"> {esc(p['price_note'])}</span></p>
-        <p class="price-period">{esc(p['vendor'])} · Launched {esc(p['launch_date'])} · JVZoo</p>
+        {price_main}
+        <p class="price-period">{esc(p['vendor']) if p.get('vendor') != 'Unknown' else 'JVZoo'} · Launched {esc(p['launch_date'])} · JVZoo</p>
         <ul class="pricing-features">
 {pricing_features}
         </ul>
