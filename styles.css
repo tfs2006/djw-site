@@ -347,6 +347,22 @@ h3 {
     0 0 60px rgba(56, 189, 248, 0.18);
 }
 
+.shorts-pack-promo {
+  background:
+    linear-gradient(var(--bg-secondary), var(--bg-secondary)) padding-box,
+    linear-gradient(120deg, #f472b6, #7c3aed, #38bdf8, #22c55e) border-box;
+}
+
+.shorts-pack-promo::before {
+  background: linear-gradient(90deg, transparent, rgba(244, 114, 182, 0.2), transparent);
+}
+
+.shorts-pack-promo:hover {
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.45),
+    0 0 60px rgba(244, 114, 182, 0.18);
+}
+
 .botworld-badge {
   font-size: 0.72rem;
   font-weight: 700;
